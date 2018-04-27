@@ -1,0 +1,19 @@
+{
+  "name": "movie",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "bower install",
+    "prestart": "npm install",
+    "start": "./node_modules/.bin/hs -a localhost -p 9000 -o",
+    "test": "./node_modules/.bin/browser-sync start --server --files 'index.html' --no-notify"
+  },
+  "author": "grasszxh",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "http-server": "^0.11.1",
+    "browser-sync": "^2.23.7"
+  },
+  "description": "angular"
+}

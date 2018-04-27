@@ -1,0 +1,23 @@
+{
+  "name": "movie",
+  "homepage": "https://github.com/grasszxh/movie",
+  "authors": [
+    "grasszxh <477953109@qq.com>"
+  ],
+  "description": "starter",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "lib/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-route":"^1.5.8",
+    "jquery": "^3.3.1"
+  }
+}

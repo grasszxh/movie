@@ -1,0 +1,13 @@
+创建.bowerrc文件使用一下命令
+.bowerrc（此文件用于存放第三方库的自定义文件夹路径）
+ 创建bower.json使用以下命令
+bower init(一路回车即可，就会在对应的项目文件夹生成对应的文件)
+
+创建package.json文件使用以下命令
+npm init （如果想直接生成可以使用npm init --yes）
+安装本地预览工具（http-server、bowser-sync）使用安装全局命令：
+npm install -g http-server
+npm install -g bowser-sync（相对来说这个功能更强大，可以做浏览器与浏览器之间的同步）
+-a：要使用的地址（默认为0.0.0.0）
+-p：要使用的端口（默认为8080）
+-o：启动服务器后打开浏览器窗口

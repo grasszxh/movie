@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="routeModule">
+	<head>
+		<meta charset="UTF-8">
+		<title>路由的使用</title>
+		<script src="lib/bower_components/angular-1.5.8/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="lib/bower_components/angular-1.5.8/angular-route.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body ng-controller="routeController">
+		<div>
+			<button ng-click="goView1()">view1</button>
+			<button ng-click="goView2()">view2</button>
+		</div>
+		<!--ng-view指令：此指令是AngularJS的内置指令，用于定义一个视口，可以用于加载创建的视图内容-->
+		<div ng-view></div>
+		<!--ng-template指令：如果视图内容比较少的时候，可以把不同的视图集成到一个月么，或者开发一个单一要么应用（spa），就可以使用ng-template指令-->
+		<!--只有type="text/javascript"为javascript时节点才会被当做JS执行-->
+		<script type="text/ng-template" id="/view1.html">
+				<h2>View1的内容</h2>
+		</script>
+		<script type="text/ng-template" id="/view2.html">
+				<h2>View2的内容</h2>
+		</script>
+		<script type="text/javascript">
+			//创建路由模块并且注入ngRoute依赖
+			var routeModule=angular.module('routeModule',['ngRoute']);
+			//配置路由模块，使用$routeProvider对象配置
+			routeModule.config(['$routeProvider',function($routeProvider){
+				//使用$routeProvider提供的方法when(path，route),它还有一个otherwise(params)方法
+				$routeProvider
+					.when('/view1',{
+						templateUrl:'/view1.html'
+					})
+					.when('/view2',{
+						templateUrl:'/view2.html'
+					})
+			}]);
+			routeModule.controller('routeController',['$scope','$location',function($scope,$location){
+				$scope.goView1=function(){
+					$location.path('/view1');
+				};
+				$scope.goView2=function(){
+					$location.path('/view2');
+				};
+			}]);
+		</script>
+	</body>
+</html>
